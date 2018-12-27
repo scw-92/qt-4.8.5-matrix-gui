@@ -140,3 +140,6 @@ QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
   make install
 ```
 3. 安装QTcreate
+```sh
+经过测试，可以使用系统原有的针对QT5.6.2版本的QTCREATOR进行编译，上述“qt测试程序源代码”可以直接进行编译，编译可以通过。
+```
