@@ -11,6 +11,7 @@
 * [qt测试程序源代码编译](https://www.cnblogs.com/chenfulin5/p/7009012.html)
 * [matrix_browser介绍](https://www.cnblogs.com/zengjfgit/p/4609623.html)
 * [ti-matrix用户指南](http://processors.wiki.ti.com/index.php/Matrix_Users_Guide)
+* [QT4.8.5源码](http://download.qt.io/archive/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz) 
 
 ```sh
   关于matrix-gui-2.0里面的xxx.php文件的解析请看剑锋的博客
