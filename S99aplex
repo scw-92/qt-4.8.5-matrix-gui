@@ -1,0 +1,100 @@
+#!/bin/sh
+
+input_index=0
+if [ -e /dev/input/event0 ]; then
+        input_index=1
+fi
+if [ -e /dev/input/event1 ]; then
+        input_index=2
+fi
+if [ -e /dev/input/event2 ]; then
+        input_index=3
+fi
+if [ -e /dev/input/event3 ]; then
+        input_index=4
+fi
+if [ -e /dev/input/event4 ]; then
+        input_index=5
+fi
+
+eGTouchD &
+sync
+sleep 1
+/usr/sbin/thttpd -d /srv/www -p 8080 &
+
+# read mac
+/usr/program/read_7109_mac/read_7109_mac
+
+#tslib config
+#while [ ! -e /dev/input/event0 ]
+#do
+#	echo "please hang up LCD TOUCH  !"
+#	sleep 1
+#done
+
+# tslib config
+export TSLIB_TSDEVICE=/dev/input/event0
+if [ -e /dev/input/event${input_index} ]; then
+export TSLIB_TSDEVICE=/dev/input/event${input_index}
+fi
+export TSLIB_CONFFILE=/etc/ts.conf
+export TSLIB_PLUGINDIR=/usr/lib/ts
+export POINTERCAL_FILE=/etc/pointercal
+export TSLIB_CALIBFILE=/etc/pointercal
+export TSLIB_CONSOLEDEVICE=none
+export TSLIB_FBDEVICE=/dev/fb0
+
+#qt config
+export QTDIR=/usr/share/qt
+export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+export QT_QWS_FONTDIR=$QTDIR/lib/fonts
+#export QWS_SIZE=800x480
+#export QWS_MOUSE_PROTO="Intellimouse:/dev/input/mice"
+export QWS_MOUSE_PROTO="Tslib:/dev/input/event0 AUTO"
+if [ -e /dev/input/event${input_index} ]; then
+export QWS_MOUSE_PROTO="Tslib:/dev/input/event${input_index} AUTO"
+fi
+export QWS_USB_KEYBOARD=/dev/input/event2
+export QWS_DISPLAY=LinuxFb:/dev/fb0
+#rotation 90
+#export QWS_DISPLAY=transformed:rot90:LinuxFb:/dev/fb0
+
+# brightness save
+if [ -e /etc/brightness  ]; then
+    echo $(cat /etc/brightness)  > /sys/class/backlight/backlight/brightness
+fi
+
+# system update
+if [ -e /root/update.sh ]; then
+    /root/update.sh
+fi
+
+# tslib
+echo $TSLIB_TSDEVICE
+echo $QWS_MOUSE_PROTO
+if [ ! -e /etc/pointercal ] ; then
+   ts_calibrate
+   sync
+fi
+if [ ! -e /dev/input/event${input_index} ]; then
+killall eGTouchD
+fi
+# lighttpd sevice start
+#cd /usr/share/web/lighttpd/sbin
+#./lighttpd -f ../config/lighttpd.conf &
+apachectl start
+sleep 1
+
+# qt app start
+cd /qt_app
+if [ -e /on-off-file ] ; then
+    ./on-off-test -qws 2>/dev/null &
+else
+    ./matrix_gui -qws 2>/dev/null &
+fi
+
+echo "/sbin/mdev" > /proc/sys/kernel/hotplug
+mdev -s
+
+ifconfig eth0 up
+ifconfig eth1 up

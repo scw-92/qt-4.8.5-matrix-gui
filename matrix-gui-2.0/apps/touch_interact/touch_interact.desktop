@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Interaction
+GenericName=Demo App
+Icon=/usr/share/matrix-gui-2.0/apps/images/qt-icon.png
+Exec=/usr/share/qt5/examples/quick/touchinteraction/touchinteraction -platform eglfs
+Type=Application
+ProgramType=gui
+Categories=touch
+Name[en_US]=touch_interact.desktop

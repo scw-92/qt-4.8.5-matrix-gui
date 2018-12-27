@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Barcode ROI Detection
+GenericName=Demo App
+Icon=/usr/share/matrix-gui-2.0/apps/images/multimedia-icon.png
+Type=Application
+Exec=runBarcodeRoi.sh
+Categories=machinevision
+ProgramType=gui
+X-MATRIX-Description=/usr/share/matrix-gui-2.0/apps/machinevision_barcode_roi/desc_machinevision_barcode_roi.html

@@ -1,0 +1,39 @@
+{
+    "main_menu":
+    {"apps":
+        [
+            {"Name":"Browser",
+            "Order":999,
+            "Icon":"apps\/images\/web-icon.png",
+            "Type":"application",
+            "Exec":"\/usr/share\/web\/lighttpd\/webpages\/shell\/browser.sh http://processors.wiki.ti.com",
+            "ProgramType":"gui",
+            "Description_Link":-1,
+            "Lock":-1},
+            {"Name":"Touch",
+            "Order":999,
+            "Icon":"apps\/images\/touch-icon.png",
+            "Type":"application",
+            "Exec":"\/usr/share\/web\/lighttpd\/webpages\/shell\/touch.sh",
+            "ProgramType":"gui",
+            "Description_Link":-1,
+            "Lock":-1},
+            {"Name":"Test",
+            "Order":999,
+            "Icon":"apps\/images\/test.png",
+            "Type":"application",
+            "Exec":"\/usr/share\/web\/lighttpd\/webpages\/shell\/test.sh",
+            "ProgramType":"gui",
+            "Description_Link":-1,
+            "Lock":-1},
+            {"Name":"Performance",
+            "Order":999,
+            "Icon":"apps\/images\/perf.png",
+            "Type":"application",
+            "Exec":"\/usr/share\/web\/lighttpd\/webpages\/shell\/perf.sh",
+            "ProgramType":"gui",
+            "Description_Link":-1,
+            "Lock":-1}
+        ]
+    }
+}

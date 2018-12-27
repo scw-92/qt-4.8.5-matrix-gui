@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=PROTECTION_RELAYS
+GenericName=Demo App
+Icon=/usr/share/matrix-gui-2.0/apps/images/multimedia-icon.png
+Exec=/usr/bin/runHmiProtectionRelays.sh
+Type=Application
+ProgramType=gui
+Categories=hmi
+X-MATRIX-Lock=hmi_protection_relays_lock
+X-MATRIX-Description=/usr/share/matrix-gui-2.0/apps/hmi_protection_relays/desc_hmi_protection_relays.html

@@ -1,0 +1,20 @@
+QThread: Destroyed while thread is still running
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+led display
+_?!!MATRIX_SCRIPT_COMPLETED!!?_

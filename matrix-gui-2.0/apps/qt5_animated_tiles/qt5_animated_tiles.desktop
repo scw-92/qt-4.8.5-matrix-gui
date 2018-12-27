@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=Animated Tiles
+GenericName=Demo App
+Icon=/usr/share/matrix-gui-2.0/apps/images/qt-icon.png
+Exec=/usr/share/qt5/examples/widgets/animation/animatedtiles/animatedtiles
+Type=Application
+Categories=Qt5
+ProgramType=gui
+X-MATRIX-Lock=qt
+Name[en_US]=qt5_animated_tiles.desktop

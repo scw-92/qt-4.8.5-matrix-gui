@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=Calculator
+GenericName=Demo App
+Icon=/usr/share/matrix-gui-2.0/apps/images/qt-icon.png
+Exec=/usr/share/qt5/examples/widgets/widgets/calculator/calculator
+Type=Application
+Categories=Qt5
+ProgramType=gui
+Name[en_US]=qt5_calculator.desktop

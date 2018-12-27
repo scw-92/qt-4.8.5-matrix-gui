@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=HMI
+GenericName=HMI
+Icon=/usr/share/matrix-gui-2.0/apps/images/multimedia-icon.png
+Type=Directory
+X-MATRIX-CategoryTarget=hmi

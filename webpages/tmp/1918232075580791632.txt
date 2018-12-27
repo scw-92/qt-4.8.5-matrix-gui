@@ -1,0 +1,6 @@
+open ttyO1 .....
+fcntl=0
+standard input is not a terminal device
+fd-open=11
+set done!
+_?!!MATRIX_SCRIPT_COMPLETED!!?_

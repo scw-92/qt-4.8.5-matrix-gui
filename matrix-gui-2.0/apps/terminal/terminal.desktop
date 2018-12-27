@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Terminal
+GenericName=Demo App
+Icon=/usr/share/matrix-gui-2.0/apps/images/power-icon.png
+Type=Application
+Exec=weston-terminal
+Categories=settings
+ProgramType=gui
+X-MATRIX-Description=/usr/share/matrix-gui-2.0/apps/terminal/desc_terminal.html

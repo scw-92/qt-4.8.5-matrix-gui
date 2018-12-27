@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=KMS Cube
+GenericName=Demo App
+Icon=/usr/share/matrix-gui-2.0/apps/images/3d-icon.png
+Type=Application
+Exec=/usr/bin/kmscube -n 600
+Categories=3d
+ProgramType=gui

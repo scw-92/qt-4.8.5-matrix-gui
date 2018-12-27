@@ -1,0 +1,2 @@
+/usr/share/web/lighttpd/webpages/shell/browser.sh: line 19:  1657 Killed                  /usr/share/qt/bin/browser -geometry $geo $*
+_?!!MATRIX_SCRIPT_COMPLETED!!?_

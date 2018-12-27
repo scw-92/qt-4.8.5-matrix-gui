@@ -1,0 +1,57 @@
+open device faild
+udhcpc (v1.20.2) started
+Sending discover...
+QThread: Destroyed while thread is still running
+== 0
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 1
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 2
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 3
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 4
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 5
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 6
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 7
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 8
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+== 9
+io 1 -> 255 
+io 1 -> 255 
+io 2 -> 255 
+io 2 -> 255 
+fd == -1 
+Sending discover...
+Sending discover...

@@ -1,0 +1,4 @@
+Counter::setDigitsFile :/default/resources/train_digits.svg loaded
+PotentioMeter::setSvgResourceFile :/default/resources/dial1.svg loaded
+/usr/share/web/lighttpd/webpages
+_?!!MATRIX_SCRIPT_COMPLETED!!?_

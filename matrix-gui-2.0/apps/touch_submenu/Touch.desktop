@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Touch
+GenericName=Touch Screen Demos
+Icon=/usr/share/matrix-gui-2.0/apps/images/qt-icon.png
+Type=Directory
+X-MATRIX-CategoryTarget=touch
+Name[en_US]=Touch

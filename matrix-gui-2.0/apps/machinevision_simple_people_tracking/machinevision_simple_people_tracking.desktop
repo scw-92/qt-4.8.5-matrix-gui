@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Simple People Tracking
+GenericName=Demo App
+Icon=/usr/share/matrix-gui-2.0/apps/images//multimedia-icon.png
+Type=Application
+Exec=runSimplePeopleTracking.sh
+Categories=machinevision
+ProgramType=gui
+X-MATRIX-Description=/usr/share/matrix-gui-2.0/apps/machinevision_simple_people_tracking/desc_machinevision_simple_people_tracking.html
