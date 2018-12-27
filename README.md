@@ -1,11 +1,13 @@
 # qt-4.8.5-matrix-gui
 
-## QT4.8..5_test：        qt测试程序源代码
-## matrix-gui-2.0/app  : 提供了程序的桌面配置方法
-## webpages            ： 修改后的文件系统里面的源代码
-## S99aplex            :  文件系统的启动脚本
-## httpd.conf          :  apache2的配置文件
-## matrix_browser      ：QT本地浏览器
+## 00-QT4.8..5_test        :  qt测试程序源代码(编译为一个整体: 5M的text)
+## 01-qt-4.8.5-test-split  :  qt测试程序源代码(单独编译，为每一个功能编译为一个程序: 2K的text)
+## 02-matrix-gui-2.0/app   :  提供了程序的桌面配置方法
+## 03-webpages             :  修改后的文件系统里面的源代码
+## 04-S99aplex             :  文件系统的启动脚本
+## 05-httpd.conf           :  apache2的配置文件
+## 06-matrix_browser       :  QT本地浏览器
+## 07-matrix-gui-2.0.sh    :  本地浏览器的启动脚本
 
 * [QT4.8.5编译](https://www.cnblogs.com/chenfulin5/p/6958560.html)
 * [qt测试程序源代码编译](https://www.cnblogs.com/chenfulin5/p/7009012.html)
