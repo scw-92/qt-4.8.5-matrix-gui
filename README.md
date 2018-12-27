@@ -16,3 +16,127 @@
 ```sh
   关于matrix-gui-2.0里面的xxx.php文件的解析请看剑锋的博客
 ```
+* qt4.8.5 手动编译
+1. tslib（0.9.0） 编译
+```sh
+    sudo apt-get install autoconf automake libtool
+    git clone https://github.com/scw-92/tslib.git
+    cd tslib
+    创建auto_configure.sh 脚本文件，内容如下：
+```
+<div>cat auto_configure.sh</div>
+
+```sh
+echo "ac_cv_func_malloc_0_nonnull=yes" >daiq_tslib.cache 
+./autogen.sh 
+./configure \
+	--prefix=/home/cmi-at751/qt4.8.5/tslib_install \
+	--host=arm-linux-gnueabihf 
+make && make install
+```
+2. 编译QT
+* [下载合适的交叉编译工具链](https://e2echina.ti.com/question_answer/dsp_arm/sitara_arm/f/25/p/113233/308047#308047)
+* [QT4.8.5源码](http://download.qt.io/archive/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz) 
+
+<div>编译配置步骤如下</div>
+
+```sh
+ 2.1. 
+  复制一份  qt-everywhere-opensource-src-4.8.5/mkspecs/qws/linux-arm-gnueabi-g++ 
+        为 qt-everywhere-opensource-src-4.8.5/mkspecs/qws/linux-arm-gnueabihf-g++
+        
+  2.2. cat qt-everywhere-opensource-src-4.8.5/mkspecs/qws/linux-arm-gnueabihf-g++/qmake.conf 
+```
+
+<div>2.2 cat qt-everywhere-opensource-src-4.8.5/mkspecs/qws/linux-arm-gnueabihf-g++/qmake.conf</div>
+
+```sh
+#
+# qmake configuration for building with arm-none-linux-gnueabi-g++
+#
+
+include(../../common/linux.conf)
+include(../../common/gcc-base-unix.conf)
+include(../../common/g++-unix.conf)
+include(../../common/qws.conf)
+
+# modifications to g++.conf
+QMAKE_CC                = arm-linux-gnueabihf-gcc
+QMAKE_CXX               = arm-linux-gnueabihf-g++
+QMAKE_LINK              = arm-linux-gnueabihf-g++
+QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++
+
+# modifications to linux.conf
+QMAKE_AR                = arm-linux-gnueabihf-ar cqs
+QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
+QMAKE_STRIP             = arm-linux-gnueabihf-strip
+
+
+QMAKE_INCDIR            = /home/cmi-at751/qt4.8.5/tslib_install/include
+QMAKE_LIBDIR            = /home/cmi-at751/qt4.8.5/tslib_install/lib
+
+load(qt_config)
+```
+<div>2.3. 修改 qt-everywhere-opensource-src-4.8.5/mkspecs/common/linux.conf </div>
+
+```sh
+QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
+```
+
+<div>2.4 在  qt-everywhere-opensource-src-4.8.5 里面添加配置文件 my.sh </div>
+
+```sh
+#!/bin/sh                                                                       
+                                                                                
+./configure \
+	-opensource \
+	-prefix /home/cmi-at751/qt4.8.5/qtarm_install \
+	-confirm-license \
+	-release \
+	-shared \
+	-embedded arm \
+	-force-pkg-config \
+	-xplatform qws/linux-arm-gnueabihf-g++ \
+	-depths 16,18,24,32 \
+	-fast \
+	-optimized-qmake \
+	-no-pch \
+	-qt-sql-sqlite \
+	-qt-libjpeg \
+	-qt-zlib \
+	-qt-libpng \
+	-qt-freetype \
+	-little-endian -host-little-endian \
+	-no-qt3support \
+	-qt-libtiff -qt-libmng \
+	-make translations \
+	-qt-gfx-linuxfb -qt-gfx-transformed -qt-gfx-multiscreen \
+	-no-gfx-vnc -no-gfx-qvfb -qt-kbd-linuxinput \
+	-no-kbd-qvfb -armfpa  \
+	-no-mouse-qvfb \
+	-no-opengl \
+	-no-mmx -no-sse -no-sse2 \
+	-no-3dnow \
+	-no-openssl \
+	-webkit \
+	-no-qvfb \
+	-no-phonon \
+	-no-nis \
+	-no-opengl \
+	-no-cups \
+	-no-glib \
+	-no-xcursor -no-xfixes -no-xrandr -no-xrender \
+	-no-separate-debug-info \
+	-nomake examples -make tools -make docs \
+	-qt-mouse-tslib -DQT_QLOCALE_USES_FCVT \
+	-I/home/cmi-at751/qt4.8.5/tslib_install/include \
+	-L/home/cmi-at751/qt4.8.5/tslib_install/lib   
+```
+<div>2.5. 编译与安装</div>
+
+```sh
+  chmod 777 my.sh
+  make -j4
+  make install
+```
+3. 安装QTcreate
