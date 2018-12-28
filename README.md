@@ -30,6 +30,8 @@
 * [02 编译qt](#jump2)
 * [03 安装QTcreate](#jump3)
 * [04 编译qtwebkit](#jump4)
+* [05 QTWebKit模块的使用](#jump5)
+* [06 查看qmake的信息](#jump6)
 
 * qt4.8.5 手动编译
 <span id="jump1">1. tslib（0.9.0） 编译
@@ -174,3 +176,48 @@ QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
 ![](qt4.8.5-image/clipboard4.png)
 
 ![](qt4.8.5-image/clipboard5.png)
+
+<span id="jump5">5. QTWebKit模块的使用
+	
+<div>1. 更改webkit库的名字</div>
+	
+```sh
+	rm libQtWebKit.so.
+	rm libQtWebKit.so..
+	
+	mv libQtWebKit.so...  libQtWebKit.so.4.8.5
+	ln -s libQtWebKit.so.4.8.5 libQtWebKit.so.4.8
+	ln -s libQtWebKit.so.4.8.5 libQtWebKit.so.4
+	ln -s libQtWebKit.so.4.8.5 libQtWebKit.so
+```
+
+<div>1. 头文件的指定</div>
+```sh
+头文件的指定有3种形式
+方式1：
+    在webkit的代码工程中添加webkit模块的头文件
+    INCLUDE +=/home/cmi-at751/qt4.8.5/qt-everywhere-opensource-src-4.8.5/include
+    
+方式2：
+    在编译QT源代码时，将QT的安装目录指定为QT的源代码的根目录
+    ./configure \
+	-opensource \
+	-prefix /home/cmi-at751/qt4.8.5/qt-everywhere-opensource-src-4.8.5 \
+	
+方式3：
+    若已经提前编译了QT的其他模块，而又在编译wetkit功能代码时不想添加QT的webkit的文件，可执行如下命令
+     01 更改安装目录 ./configure \
+	  -opensource \
+	  -prefix /home/cmi-at751/qt4.8.5/qt-everywhere-opensource-src-4.8.5 \
+	
+     02 从新生成配置文件
+         make confclean
+	 ./my.sh
+	 
+     03 重新编译qmake
+     	make 
+     注意：对于步骤3来说，只需要重新生成qmake即可，qmake里面指定了QT头文件的地址和qt库的地址，所以我们需要重新生成新的qmake，这个编译不会太久，当我们查看qt-everywhere-opensource-src-4.8.5/bin目录里面有新的qmake时,按下 “Ctrl + C”中断编译。然后就可以使用新的qmake来编译了。
+```
+<div><span id="jump6">查看qmake的信息</div>
+
+![](qt4.8.5-image/clipboard6.png)
