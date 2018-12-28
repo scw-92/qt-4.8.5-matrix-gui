@@ -8,6 +8,7 @@
 ## 05-httpd.conf           :  apache2的配置文件
 ## 06-matrix_browser       :  QT本地浏览器
 ## 07-matrix-gui-2.0.sh    :  本地浏览器的启动脚本
+## 08 matrix-gui           :  位于am437x的PDK中
 
 * [QT4.8.5编译-富林](https://www.cnblogs.com/chenfulin5/p/6958560.html)
 * [QT4.8.6编译-整套流程](https://www.cnblogs.com/bleachli/p/4759587.htm)
