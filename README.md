@@ -165,3 +165,12 @@ QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
 	1. 在linux虚拟机中打开qtcreatror
 	2. 具体编译如下图所示
 ```
+![](qt4.8.5-image/clipboard1.png)
+	
+![](qt4.8.5-image/clipboard2.png)
+
+![](qt4.8.5-image/clipboard3.png)
+
+![](qt4.8.5-image/clipboard4.png)
+
+![](qt4.8.5-image/clipboard5.png)
