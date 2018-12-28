@@ -16,7 +16,10 @@
 * [QT4.8.5源码](http://download.qt.io/archive/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz) 
 
 ```sh
-  关于matrix-gui-2.0里面的xxx.php文件的解析请看剑锋的博客
+  注意：
+  1. 关于matrix-gui-2.0里面的xxx.php文件的解析请看剑锋的博客
+  2. 在QT4.8.5里面，qtwebkit在src/3rdparty/webkit中
+  3. qtwebkit.4.8.5版本的使用请参考：http://doc.qt.io/archives/qt-4.8/qtwebkit-module.html
 ```
 * qt4.8.5 手动编译
 1. tslib（0.9.0） 编译
