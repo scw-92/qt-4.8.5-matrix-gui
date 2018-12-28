@@ -24,8 +24,16 @@
   2. 在QT4.8.5里面，qtwebkit在src/3rdparty/webkit中
   3. qtwebkit.4.8.5版本的使用请参考：http://doc.qt.io/archives/qt-4.8/qtwebkit-module.html
 ```
+
+编译arm版本的QT4.8.5
+* [01 编译tslib](#jump1)
+* [02 编译qt](#jump2)
+* [03 安装QTcreate](#jump3)
+* [04 编译qtwebkit](#jump4)
+
 * qt4.8.5 手动编译
-1. tslib（0.9.0） 编译
+<span id="jump1">1. tslib（0.9.0） 编译
+	
 ```sh
     sudo apt-get install autoconf automake libtool
     git clone https://github.com/scw-92/tslib.git
@@ -42,7 +50,7 @@ echo "ac_cv_func_malloc_0_nonnull=yes" >daiq_tslib.cache
 	--host=arm-linux-gnueabihf 
 make && make install
 ```
-2. 编译QT
+<span id="jump2">2. 编译QT
 * [下载合适的交叉编译工具链](https://e2echina.ti.com/question_answer/dsp_arm/sitara_arm/f/25/p/113233/308047#308047)
 * [QT4.8.5源码](http://download.qt.io/archive/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz) 
 
@@ -147,7 +155,13 @@ QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
   make -j4
   make install
 ```
-3. 安装QTcreate
+<span id="jump3">3. 安装QTcreate
 ```sh
 经过测试，可以使用系统原有的针对QT5.6.2版本的QTCREATOR进行编译，上述“qt测试程序源代码”可以直接进行编译，编译可以通过。
+```
+<span id="jump4">4. 编译QTWebKit
+```sh
+使用QTcteator编译QTWebKit
+	1. 在linux虚拟机中打开qtcreatror
+	2. 具体编译如下图所示
 ```
