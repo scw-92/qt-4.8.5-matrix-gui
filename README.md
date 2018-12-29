@@ -223,4 +223,9 @@ QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
 
 ![](qt4.8.5-image/clipboard6.png)
 
+```sh
+$(QTDIR)/include  :QT默认的头文件地址
+$(QTDIR)/lib  :QT默认的库地址
+```
+
 
