@@ -215,7 +215,7 @@ QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
 	 ./my.sh
 	 
      03 重新编译qmake
-     	make 
+     	make qmake 
      注意：对于步骤3来说，只需要重新生成qmake即可，qmake里面指定了QT头文件的地址和qt库的地址，所以我们需要重新生成新的qmake，这个编译不会太久，当我们查看qt-everywhere-opensource-src-4.8.5/bin目录里面有新的qmake时,按下 “Ctrl + C”中断编译。然后就可以使用新的qmake来编译了。
      
 ```
