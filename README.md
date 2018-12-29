@@ -192,6 +192,7 @@ QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
 ```
 
 <div>1. 头文件的指定</div>
+
 ```sh
 头文件的指定有3种形式
 方式1：
