@@ -224,6 +224,9 @@ QMAKE_LIBS_THREAD     = -lpthread  -lts       // 添加 -lts
      
 ```
 
+
+<span id="jump6"> 6. 查看qmake信息
+
 ![](qt4.8.5-image/clipboard6.png)
 
 ```sh
