@@ -32,8 +32,11 @@
 * [04 编译qtwebkit](#jump4)
 * [05 QTWebKit模块的使用](#jump5)
 * [06 查看qmake的信息](#jump6)
+* [07 修改完静态IP后重启开发板屏幕白屏问题](#jump7)
 
-* qt4.8.5 手动编译
+
+## <p>qt4.8.5 手动编译</p>
+
 <span id="jump1">1. tslib（0.9.0） 编译
 	
 ```sh
@@ -228,4 +231,8 @@ $(QTDIR)/include  :QT默认的头文件地址
 $(QTDIR)/lib  :QT默认的库地址
 ```
 
-
+<span id="jump7">7. 修改完静态IP后重启开发板屏幕白屏问题
+	
+```sh
+修改完静态IP后，重启开发板会造成开发板屏幕的白屏问题，经过测试得知，这是由于在修改完静态IP后 ，/etc/network/interfaces这个文件的内容出现问题导致，也就是说，QT里面的network二进制程序有问题，需要对此程序的源文件进行修改即可。
+```
